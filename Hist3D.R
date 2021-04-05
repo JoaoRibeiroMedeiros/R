@@ -27,19 +27,19 @@ Hist3D<- function(x,y, breaks){ #breaks is 2^N
     
     for( i in 1: len)
     {
-        indicex<- 1
-        indicey<- 1
+        indicex<- 0
+        indicey<- 0
         
         b<- breaks
         
         for( j in 1:N )
         {
         	b<- b/2
-            if(breaksx[indicex+b-1] <= x[i] )
+            if(breaksx[indicex+b+1] <= x[i] )
             {
                 binario <-1
             }
-            if( x[i] < breaksx[indicex+b-1 ] )
+            if( x[i] < breaksx[indicex+b+1 ] )
             {
                 binario <- 0 
             }
@@ -52,11 +52,11 @@ Hist3D<- function(x,y, breaks){ #breaks is 2^N
          for( j in 1:N )
         {
         	b<- b/2
-            if(breaksy[indicey+b-1] <= y[i] )
+            if(breaksy[indicey+b+1] <= y[i] )
             {
                 binario <-1
             }
-            if( y[i] < breaksy[indicey+b-1 ] )
+            if( y[i] < breaksy[indicey+b+1 ] )
             {
                 binario <- 0 
             }
